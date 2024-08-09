@@ -117,7 +117,7 @@ class LoginViewBody extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Icon(
-                          Icons.facebook,
+                          FontAwesomeIcons.facebook,
                           color: Color(0xff3b5998),
                         ),
                         Text(
