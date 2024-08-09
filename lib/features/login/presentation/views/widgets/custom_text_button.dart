@@ -19,7 +19,6 @@ class CustomTextButton extends StatelessWidget {
           style: TextStyle(
             color: Colors.white,
             //fontSize: 20,
-            fontFamily: 'kufi',
             fontWeight: FontWeight.bold,
           ),
         ),
