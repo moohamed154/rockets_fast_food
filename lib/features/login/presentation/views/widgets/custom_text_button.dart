@@ -7,8 +7,14 @@ class CustomTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 340,
+      height: 55,
       child: TextButton(
         style: ButtonStyle(
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
           backgroundColor: WidgetStateProperty.all(
             const Color(0xFFffb132),
           ),

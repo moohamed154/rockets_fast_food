@@ -20,7 +20,7 @@ class LoginViewBody extends StatelessWidget {
               children: [
                 const SizedBox(height: 40),
                 Image.asset(
-                  width: 200,
+                  width: 165,
                   'assets/images/rocket.png',
                 ),
                 const SizedBox(height: 20),
@@ -55,7 +55,7 @@ class LoginViewBody extends StatelessWidget {
                     GestureDetector(
                       onTap: () {},
                       child: const Text(
-                        'انشاء حساب جديد   ',
+                        'انشاء حساب جديد ',
                         style: TextStyle(
                           color: Color(0xffffb132),
                           fontSize: 16,
@@ -71,6 +71,7 @@ class LoginViewBody extends StatelessWidget {
                     ),
                   ],
                 ),
+                const SizedBox(height: 20),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -84,7 +85,7 @@ class LoginViewBody extends StatelessWidget {
                     Text(
                       'أو',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -101,13 +102,13 @@ class LoginViewBody extends StatelessWidget {
                   height: 20,
                 ),
                 SizedBox(
-                  width: 300,
+                  width: 340,
                   height: 55,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25),
+                          borderRadius: BorderRadius.circular(16),
                           side: const BorderSide(color: Color(0xff3b5998)),
                         ),
                       ),
@@ -125,7 +126,7 @@ class LoginViewBody extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xff3b5998),
                             fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                            fontSize: 16,
                           ),
                         ),
                       ],
@@ -136,13 +137,13 @@ class LoginViewBody extends StatelessWidget {
                   height: 20,
                 ),
                 SizedBox(
-                  width: 300,
+                  width: 340,
                   height: 55,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25),
+                          borderRadius: BorderRadius.circular(16),
                           side: const BorderSide(color: Color(0xffba4d49)),
                         ),
                       ),
@@ -160,7 +161,7 @@ class LoginViewBody extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xffba4d49),
                             fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                            fontSize: 16,
                           ),
                         ),
                       ],
@@ -179,7 +180,7 @@ class LoginViewBody extends StatelessWidget {
                   child: const Text(
                     'التسجيل لاحقا',
                     style: TextStyle(
-                      fontSize: 19,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
