@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomTextButton extends StatelessWidget {
-  const CustomTextButton({super.key});
-
+  const CustomTextButton({super.key, required this.text, required this.color});
+  final String text;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,13 +17,13 @@ class CustomTextButton extends StatelessWidget {
             ),
           ),
           backgroundColor: WidgetStateProperty.all(
-            const Color(0xFFffb132),
+            color,
           ),
         ),
         onPressed: () {},
-        child: const Text(
-          'تسجيل الدخول',
-          style: TextStyle(
+        child: Text(
+          text,
+          style: const TextStyle(
             color: Colors.white,
             //fontSize: 20,
             fontWeight: FontWeight.bold,

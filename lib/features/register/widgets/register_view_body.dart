@@ -7,15 +7,15 @@ import 'package:rockets/features/login/presentation/views/widgets/custom_social_
 import 'package:rockets/features/login/presentation/views/widgets/custom_text_button.dart';
 import 'package:rockets/features/login/presentation/views/widgets/custom_text_field.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class RegisterViewBody extends StatelessWidget {
+  const RegisterViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
-        child: Center(
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,11 +27,16 @@ class LoginViewBody extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 const Text(
-                  'تسجيل الدخول',
+                  'تسجيل حساب جديد',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 20,
                   ),
+                ),
+                const SizedBox(height: 30),
+                const CustomTextField(
+                  hintText: 'الاسم',
+                  icon: Icons.person,
                 ),
                 const SizedBox(height: 20),
                 const CustomTextField(
@@ -45,13 +50,8 @@ class LoginViewBody extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 const CustomTextButton(
-                  text: 'تسجيل الدخول',
+                  text: 'تسجيل',
                   color: Color(0xffffb132),
-                ),
-                const SizedBox(height: 20),
-                GestureDetector(
-                  onTap: () {},
-                  child: const Text('نسيت كلمة المرور؟'),
                 ),
                 const SizedBox(height: 20),
                 Row(
@@ -60,11 +60,11 @@ class LoginViewBody extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         GoRouter.of(context).push(
-                          AppRouter.kRegisterView,
+                          AppRouter.kLogin,
                         );
                       },
                       child: const Text(
-                        'انشاء حساب جديد ',
+                        ' تسجيل الدخول',
                         style: TextStyle(
                           color: Color(0xffffb132),
                           fontSize: 16,
@@ -73,7 +73,7 @@ class LoginViewBody extends StatelessWidget {
                       ),
                     ),
                     const Text(
-                      'ليس لديك حساب؟ ',
+                      ' لديك حساب بالفعل؟ ',
                       style: TextStyle(
                         fontSize: 16,
                       ),
@@ -111,7 +111,7 @@ class LoginViewBody extends StatelessWidget {
                   height: 20,
                 ),
                 const CustomSocialButtonLogin(
-                  title: 'الدخول بواسطة فيسبوك ',
+                  title: 'التسجيل بواسطة فيسبوك ',
                   icon: FontAwesomeIcons.facebook,
                   buttonColor: kFcebookColor,
                   iconColor: kFcebookColor,
@@ -121,7 +121,7 @@ class LoginViewBody extends StatelessWidget {
                   height: 20,
                 ),
                 const CustomSocialButtonLogin(
-                  title: 'الدخول بواسطة جوجل ',
+                  title: 'التسجيل بواسطة جوجل ',
                   icon: FontAwesomeIcons.google,
                   buttonColor: kGoogleColor,
                   iconColor: kGoogleColor,
@@ -143,9 +143,6 @@ class LoginViewBody extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 40,
                 ),
               ],
             ),
