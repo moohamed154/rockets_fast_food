@@ -20,12 +20,11 @@ class LoginViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 30),
                 Image.asset(
                   width: 165,
                   'assets/images/rocket.png',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 35),
                 const Text(
                   'تسجيل الدخول',
                   style: TextStyle(
@@ -33,7 +32,7 @@ class LoginViewBody extends StatelessWidget {
                     fontSize: 20,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
                 const CustomTextField(
                   hintText: 'البريد الإلكتروني',
                   icon: Icons.email,
@@ -46,7 +45,7 @@ class LoginViewBody extends StatelessWidget {
                 const SizedBox(height: 20),
                 const CustomTextButton(
                   text: 'تسجيل الدخول',
-                  color: Color(0xffffb132),
+                  color: kPrimaryColor,
                 ),
                 const SizedBox(height: 20),
                 GestureDetector(
@@ -66,7 +65,7 @@ class LoginViewBody extends StatelessWidget {
                       child: const Text(
                         'انشاء حساب جديد ',
                         style: TextStyle(
-                          color: Color(0xffffb132),
+                          color: kPrimaryColor,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),

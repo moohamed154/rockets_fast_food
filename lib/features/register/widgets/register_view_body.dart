@@ -20,7 +20,6 @@ class RegisterViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 30),
                 Image.asset(
                   width: 165,
                   'assets/images/rocket.png',
@@ -51,7 +50,7 @@ class RegisterViewBody extends StatelessWidget {
                 const SizedBox(height: 20),
                 const CustomTextButton(
                   text: 'تسجيل',
-                  color: Color(0xffffb132),
+                  color: kPrimaryColor,
                 ),
                 const SizedBox(height: 20),
                 Row(
@@ -66,7 +65,7 @@ class RegisterViewBody extends StatelessWidget {
                       child: const Text(
                         ' تسجيل الدخول',
                         style: TextStyle(
-                          color: Color(0xffffb132),
+                          color: kPrimaryColor,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
