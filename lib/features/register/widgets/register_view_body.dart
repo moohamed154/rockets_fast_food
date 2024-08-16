@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rockets/constants.dart';
-import 'package:rockets/core/utils/app_router.dart';
+import 'package:rockets/Core/utils/app_router.dart';
 import 'package:rockets/features/login/presentation/views/widgets/custom_social_button_login.dart';
 import 'package:rockets/features/login/presentation/views/widgets/custom_text_button.dart';
 import 'package:rockets/features/login/presentation/views/widgets/custom_text_field.dart';
