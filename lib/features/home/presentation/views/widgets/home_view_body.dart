@@ -1,16 +1,49 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rockets/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:rockets/features/home/presentation/views/widgets/custom_grid_view.dart';
 import 'package:rockets/features/home/presentation/views/widgets/slider_list_view.dart';
+import 'package:rockets/core/widgets/custom_drawer.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Scaffold(
-        body: CustomScrollView(
+        endDrawer: const CustomDrawer(),
+        appBar: AppBar(
+          elevation: 2,
+          leadingWidth: 120,
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 16.0),
+            child: Image.asset(
+              'assets/images/rocket-text_transparent.png',
+              height: 100,
+              width: 100,
+            ),
+          ),
+          actions: [
+            Builder(builder: (context) {
+              return ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.all(16),
+                  backgroundColor: Colors.transparent,
+                  shadowColor: Colors.transparent,
+                ),
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+                child: const Icon(
+                  CupertinoIcons.bars,
+                  color: Colors.black,
+                  size: 30,
+                ),
+              );
+            }),
+          ],
+        ),
+        body: const CustomScrollView(
           physics: BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
@@ -18,14 +51,6 @@ class HomeViewBody extends StatelessWidget {
                 padding: EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: 16.0, left: 20, right: 20),
-                      child: CustomAppBar(),
-                    ),
-                    Divider(
-                      color: Colors.grey,
-                      thickness: 0.5,
-                    ),
                     SizedBox(height: 10),
                     SliderListView(),
                     SizedBox(height: 20),

@@ -8,8 +8,8 @@ class CustomGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      physics: const BouncingScrollPhysics(), // تفعيل السكروول
-      shrinkWrap: true, // عدد الأعمدة
+      physics: const BouncingScrollPhysics(),
+      shrinkWrap: true,
       children: List.generate(
         10,
         (index) {
@@ -17,7 +17,7 @@ class CustomGridView extends StatelessWidget {
             child: CustomCard(),
           );
         },
-      ), // يجعل الـ GridView يأخذ المساحة المطلوبة فقط
+      ),
     );
   }
 }
