@@ -14,7 +14,9 @@ class CustomProductViewBody extends StatelessWidget {
       child: Scaffold(
         endDrawer: const CustomDrawer(),
         appBar: AppBar(
-          elevation: 2,
+          shadowColor: Colors.black,
+          elevation: 5,
+          backgroundColor: Colors.white,
           leadingWidth: 60,
           leading: Padding(
             padding: const EdgeInsets.only(left: 12),
