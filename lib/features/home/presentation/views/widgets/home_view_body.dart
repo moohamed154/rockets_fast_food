@@ -13,8 +13,7 @@ class HomeViewBody extends StatelessWidget {
       child: Scaffold(
         endDrawer: const CustomDrawer(),
         appBar: AppBar(
-          shadowColor: Colors.black,
-          elevation: 5,
+          elevation: 0,
           backgroundColor: Colors.white,
           leadingWidth: 120,
           leading: Padding(
