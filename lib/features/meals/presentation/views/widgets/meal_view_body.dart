@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rockets/features/meals/presentation/views/widgets/custom_grid_view.dart';
 import 'package:rockets/core/widgets/custom_drawer.dart';
-import 'package:rockets/features/meals/presentation/views/widgets/slider_list_view.dart';
 
 class MealViewBody extends StatelessWidget {
   const MealViewBody({super.key});
