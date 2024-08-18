@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:rockets/core/utils/app_router.dart';
 import 'package:rockets/features/meals/presentation/views/widgets/custom_grid_view.dart';
 import 'package:rockets/core/widgets/custom_drawer.dart';
 
@@ -12,15 +14,25 @@ class MealViewBody extends StatelessWidget {
       child: Scaffold(
         endDrawer: const CustomDrawer(),
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          leadingWidth: 120,
+          elevation: 2,
+          leadingWidth: 60,
           leading: Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: Image.asset(
-              'assets/images/rocket-text_transparent.png',
-              height: 100,
-              width: 100,
+            padding: const EdgeInsets.only(left: 12),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.all(16),
+                backgroundColor: Colors.transparent,
+                shadowColor: Colors.transparent,
+              ),
+              onPressed: () {
+                GoRouter.of(context).go(
+                  AppRouter.kHomeView,
+                );
+              },
+              child: const Icon(
+                CupertinoIcons.clear_thick,
+                color: Colors.black,
+              ),
             ),
           ),
           actions: [

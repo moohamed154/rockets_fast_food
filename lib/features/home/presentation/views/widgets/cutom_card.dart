@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rockets/constants.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({
@@ -15,47 +14,44 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        GestureDetector(
-          onTap: onTap,
-          child: Card(
-            elevation: 5,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Center(
-                    child: Image.asset(
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        elevation: 5,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Padding(
+          padding:
+              const EdgeInsets.symmetric(horizontal: 16), // Adjusted padding
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, // Center the content
+            children: [
+              Expanded(
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Image.asset(
                       image,
-                      height: 80,
+                      height: 70, // Adjusted image height
                     ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Center(
-                    child: Text(
-                      title,
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
+              Text(
+                title,
+                textAlign: TextAlign.center, // Center align the text
+                style: const TextStyle(
+                  fontSize: 18, // Increased font size
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
         ),
-      ],
+      ),
     );
   }
 }

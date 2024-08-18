@@ -18,7 +18,7 @@ class SliderListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 8,
+              horizontal: 16,
             ),
             child: GestureDetector(
               onTap: () {
