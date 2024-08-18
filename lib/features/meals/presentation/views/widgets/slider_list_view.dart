@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:rockets/constants.dart';
 import 'package:rockets/Core/utils/app_router.dart';
 
-class SliderListView extends StatelessWidget {
-  const SliderListView({super.key});
+class MealSliderListView extends StatelessWidget {
+  const MealSliderListView({super.key});
 
   @override
   Widget build(BuildContext context) {

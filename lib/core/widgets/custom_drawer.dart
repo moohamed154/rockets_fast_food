@@ -18,24 +18,28 @@ class CustomDrawer extends StatelessWidget {
       width: 288,
       child: ListView(
         children: [
-          DrawerHeader(
-            child: Column(
-              children: [
-                Image.asset(
-                  'assets/images/rocket.png',
-                  width: 100,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Divider(
-                  indent: 30,
-                  endIndent: 30,
-                  color: Colors.white54,
-                  thickness: 3,
-                ),
-              ],
-            ),
+          Column(
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Image.asset(
+                'assets/images/rocket.png',
+                width: 100,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Divider(
+                indent: 30,
+                endIndent: 30,
+                color: Colors.white54,
+                thickness: 3,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+            ],
           ),
           InfoCard(
             title: 'الصفحة الرئيسية',

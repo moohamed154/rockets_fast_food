@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rockets/features/home/presentation/views/widgets/cutom_card.dart';
+import 'package:rockets/features/meals/presentation/views/widgets/cutom_card.dart';
 
-class CustomGridView extends StatelessWidget {
-  const CustomGridView({super.key});
+class CustomMealGridView extends StatelessWidget {
+  const CustomMealGridView({super.key});
 
   @override
   Widget build(BuildContext context) {

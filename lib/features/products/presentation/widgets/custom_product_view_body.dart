@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:rockets/core/utils/app_router.dart';
 import 'package:rockets/features/products/presentation/widgets/custom_complete_order.dart';
 import 'package:rockets/features/products/presentation/widgets/product_action.dart';
 import 'package:rockets/features/products/presentation/widgets/product_details_section.dart';
@@ -26,7 +28,9 @@ class CustomProductViewBody extends StatelessWidget {
                 shadowColor: Colors.transparent,
               ),
               onPressed: () {
-                Navigator.of(context).pop();
+                GoRouter.of(context).go(
+                  AppRouter.kHomeView,
+                );
               },
               child: const Icon(
                 CupertinoIcons.clear_thick,

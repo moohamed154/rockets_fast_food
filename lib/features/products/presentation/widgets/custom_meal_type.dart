@@ -1,46 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rockets/constants.dart';
-
-class MealTypeItem extends StatelessWidget {
-  const MealTypeItem(
-      {super.key,
-      required this.isActive,
-      required this.color,
-      required this.title});
-
-  final bool isActive;
-  final Color color;
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return isActive
-        ? CircleAvatar(
-            radius: 38,
-            backgroundColor: Colors.red,
-            child: CircleAvatar(
-              radius: 34,
-              backgroundColor: color,
-              child: Text(
-                title,
-                style: const TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          )
-        : CircleAvatar(
-            radius: 35,
-            backgroundColor: color,
-            child: Text(
-              title,
-              style: const TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          );
-  }
-}
+import 'package:rockets/features/products/presentation/widgets/meal_type_item.dart';
 
 class CustomMealType extends StatefulWidget {
   const CustomMealType({super.key});

@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rockets/features/home/presentation/views/widgets/custom_card_content.dart';
+import 'package:rockets/features/meals/presentation/views/widgets/custom_grid_view.dart';
 import 'package:rockets/core/widgets/custom_drawer.dart';
-import 'package:rockets/features/home/presentation/views/widgets/slider_list_view.dart';
+import 'package:rockets/features/meals/presentation/views/widgets/slider_list_view.dart';
 
-class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+class MealViewBody extends StatelessWidget {
+  const MealViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +52,9 @@ class HomeViewBody extends StatelessWidget {
                 padding: EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    SizedBox(height: 10),
-                    SliderListView(),
                     SizedBox(height: 20),
                     SizedBox(
-                      child: CustomCardsContent(),
+                      child: CustomMealGridView(),
                     ), // Removed SizedBox wrapping
                   ],
                 ),

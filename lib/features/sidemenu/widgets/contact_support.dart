@@ -12,11 +12,11 @@ class CustomContactSupport extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: Container(
             padding: const EdgeInsets.all(8),
-            height: 110,
-            width: 250,
+            height: 100,
+            width: 200,
             decoration: BoxDecoration(
                 color: const Color(0xff9a1b2c),
                 borderRadius: BorderRadius.circular(20)),

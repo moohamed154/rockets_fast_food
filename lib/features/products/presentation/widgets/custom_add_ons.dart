@@ -19,23 +19,25 @@ class AddOnsItem extends StatelessWidget {
             radius: 38,
             backgroundColor: Colors.red,
             child: CircleAvatar(
-              radius: 34,
+              radius: 33,
               backgroundColor: color,
               child: Text(
                 title,
                 style: const TextStyle(
                   color: Colors.white,
+                  fontSize: 14,
                 ),
               ),
             ),
           )
         : CircleAvatar(
-            radius: 35,
+            radius: 31,
             backgroundColor: color,
             child: Text(
               title,
               style: const TextStyle(
                 color: Colors.white,
+                fontSize: 14,
               ),
             ),
           );
