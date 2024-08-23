@@ -1,100 +1,101 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rockets/constants.dart';
-import 'package:rockets/Core/utils/app_router.dart';
+import 'package:rockets/core/utils/app_router.dart';
 
-class CustomCard extends StatelessWidget {
-  const CustomCard({super.key});
+class CustomMealCard extends StatelessWidget {
+  const CustomMealCard({
+    super.key,
+    required this.title,
+    this.onTap,
+    required this.image,
+    required this.price,
+  });
+
+  final String title;
+  final String price;
+  final void Function()? onTap;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        GestureDetector(
-          onTap: () {
-            GoRouter.of(context).push(AppRouter.kProductView);
-          },
-          child: Container(
-            decoration: BoxDecoration(boxShadow: [
-              BoxShadow(
-                  blurRadius: 40,
-                  color: Colors.grey.withOpacity(0.2),
-                  spreadRadius: 0,
-                  offset: const Offset(10, 10)),
-            ]),
-            child: const Card(
-              elevation: 10,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        elevation: 5,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 60), // Adjust height to fit the image
-                    Text(
-                      'Chicken Sandwich',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    const SizedBox(
+                      height: 15,
                     ),
-                    SizedBox(
-                      height: 3,
+                    Image.asset(
+                      image,
+                      height: 70, // Adjusted image height
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '100 \$',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    )
                   ],
                 ),
               ),
-            ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: 30,
+                    child: CircleAvatar(
+                      radius: 20,
+                      backgroundColor: kPrimaryColor,
+                      child: IconButton(
+                        padding: const EdgeInsets.all(0),
+                        onPressed: () {
+                          GoRouter.of(context).push(
+                            AppRouter.kProductView,
+                          );
+                        },
+                        icon: const Icon(
+                          Icons.add,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        title,
+                        textAlign: TextAlign.center, // Center align the text
+                        style: const TextStyle(
+                          fontSize: 14, // Increased font size
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        price,
+                        textAlign: TextAlign.center, // Center align the text
+                        style: const TextStyle(
+                          fontSize: 14, // Increased font size
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+            ],
           ),
         ),
-        Positioned(
-          right: 10,
-          top: -2,
-          child: Container(
-            decoration: BoxDecoration(
-              color: kPrimaryColor,
-              borderRadius: BorderRadius.circular(50),
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 10,
-                  color: Colors.black.withOpacity(0.2),
-                  spreadRadius: 0,
-                  offset: const Offset(5, 5),
-                ),
-              ],
-            ),
-            child: SizedBox(
-              height: 40,
-              width: 40,
-              child: Image.asset('assets/images/rocket-text_white.png'),
-            ),
-          ),
-        ),
-        Positioned(
-          right: 42,
-          top: -5, // Adjust top to fit the image properly
-          child: Image.asset(
-            'assets/images/chicken-sandwich.png',
-            height: 100,
-            width: 100,
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
