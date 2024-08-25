@@ -16,7 +16,7 @@ class CustomMealGridView extends StatelessWidget {
         10,
         (index) {
           return Card(
-            child: CustomMealCard(
+            child: CustomMealContainer(
               image: 'assets/images/rocket-text_transparent.png',
               title: 'عروض السعادة',
               price: 'السعر : 100 ج',

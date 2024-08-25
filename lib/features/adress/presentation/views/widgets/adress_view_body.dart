@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rockets/constants.dart';
+import 'package:rockets/core/widgets/custom_botton.dart';
 import 'package:rockets/core/widgets/custom_drawer.dart';
-import 'package:rockets/features/login/presentation/views/widgets/custom_text_button.dart';
 import 'package:rockets/features/login/presentation/views/widgets/custom_text_field.dart';
 
 class AdressViewBody extends StatelessWidget {
@@ -100,9 +100,10 @@ class AdressViewBody extends StatelessWidget {
                   SizedBox(height: 200),
                   SizedBox(
                     width: double.infinity,
-                    child: CustomTextButton(
+                    child: CustomButton(
                       text: 'حفظ العنوان',
-                      color: kPrimaryColor,
+                      backgroundColor: kPrimaryColor,
+                      textColor: Colors.white,
                     ),
                   ),
                 ],

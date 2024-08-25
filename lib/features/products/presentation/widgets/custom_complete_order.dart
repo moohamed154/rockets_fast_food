@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:rockets/constants.dart';
-import 'package:rockets/features/login/presentation/views/widgets/custom_text_button.dart';
+import 'package:rockets/core/utils/app_router.dart';
+import 'package:rockets/core/widgets/custom_botton.dart';
 import 'package:rockets/features/products/presentation/widgets/counter_widget.dart';
 
 class CustomCompleteOrder extends StatelessWidget {
@@ -8,9 +10,9 @@ class CustomCompleteOrder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
@@ -39,23 +41,29 @@ class CustomCompleteOrder extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            CounterWidget(),
+            const CounterWidget(),
             SizedBox(
               width: 150,
-              child: CustomTextButton(
+              child: CustomButton(
+                onPressed: () {
+                  GoRouter.of(context).push(
+                    AppRouter.kBuyView,
+                  );
+                },
                 text: 'اكمل الطلب',
-                color: kPrimaryColor,
+                backgroundColor: kPrimaryColor,
+                textColor: Colors.white,
               ),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
       ],

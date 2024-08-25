@@ -6,8 +6,16 @@ import 'package:rockets/core/utils/app_router.dart';
 import 'package:rockets/core/widgets/custom_drawer.dart';
 import 'package:rockets/features/login/presentation/views/widgets/custom_text_button.dart';
 
-class BuyDetailsViewBody extends StatelessWidget {
+class BuyDetailsViewBody extends StatefulWidget {
   const BuyDetailsViewBody({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _BuyDetailsViewBodyState createState() => _BuyDetailsViewBodyState();
+}
+
+class _BuyDetailsViewBodyState extends State<BuyDetailsViewBody> {
+  String _selectedSegment = 'cash';
 
   @override
   Widget build(BuildContext context) {
@@ -177,7 +185,7 @@ class BuyDetailsViewBody extends StatelessWidget {
                               borderRadius: BorderRadius.circular(16),
                               onTap: () {
                                 GoRouter.of(context).push(
-                                  AppRouter.kOrderView,
+                                  AppRouter.kAdressView,
                                 );
                               },
                               child: Row(
@@ -199,7 +207,7 @@ class BuyDetailsViewBody extends StatelessWidget {
                                         padding: const EdgeInsets.all(0),
                                         onPressed: () {
                                           GoRouter.of(context).push(
-                                            AppRouter.kOrderView,
+                                            AppRouter.kAdressView,
                                           );
                                         },
                                         icon: const Icon(
@@ -243,24 +251,43 @@ class BuyDetailsViewBody extends StatelessWidget {
                         border: Border.all(color: Colors.grey),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Column(
                           children: [
-                            SizedBox(height: 20),
-                            CustomTextButton(
-                              text: 'الدفع عند الاستلام',
-                              color: kPrimaryColor,
-                            ),
-                            SizedBox(height: 20),
-                            Directionality(
-                              textDirection: TextDirection.rtl,
-                              child: CustomTextButton(
-                                text: 'الدفع ب Visa / Master Card',
-                                color: kPrimaryColor,
+                            const SizedBox(height: 20),
+                            SegmentedButton<String>(
+                              style: SegmentedButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                selectedBackgroundColor: kPrimaryColor,
+                                selectedForegroundColor: Colors.white,
+                                textStyle: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'kufi',
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
                               ),
+                              segments: const <ButtonSegment<String>>[
+                                ButtonSegment<String>(
+                                  value: 'visa',
+                                  label: Text('الدفع عن طريق الفيزا'),
+                                ),
+                                ButtonSegment<String>(
+                                  value: 'cash',
+                                  label: Text('الدفع عند الاستلام'),
+                                ),
+                              ],
+                              selected: {_selectedSegment},
+                              onSelectionChanged: (newSelection) {
+                                setState(() {
+                                  _selectedSegment = newSelection.first;
+                                });
+                              },
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                           ],
                         ),
                       ),
